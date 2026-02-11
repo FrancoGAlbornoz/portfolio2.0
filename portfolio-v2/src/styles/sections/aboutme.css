@@ -1,31 +1,34 @@
+/* HERO SECTION - ABOUT ME */
+
 .hero-section {
   width: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - 70px); /* viewport menos el alto del header */
+  padding-top: 70px;              /* empuja el contenido debajo del header */
+
   background: linear-gradient(135deg, #001c46 0%, #003267 50%, #0052a4 75%, #0091ff 100%);
   display: flex;
   justify-content: center;
   align-items: center;
+
   color: #fff;
   text-align: center;
-  overflow: hidden;
-  padding: 2rem 1rem;
-  margin-top: -70px; /* compensa el alto del header */
+
+  /* fuera hacks que suelen romper responsive */
+  margin-top: 0;
   position: relative;
-  left: 0;
-  right: 0;
-  width: 100vw; /* fuerza el viewport completo */
-  margin-left: calc(-50vw + 50%); /* anula cualquier padding del body o container */
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
+  left: auto;
+  right: auto;
+  margin-left: 0;
+  overflow: visible;
+  background-attachment: scroll;
 }
-/* 🔹 Contenido del hero */
-.hero-content {
-  max-width: 800px;
+
+/*  Contenido del hero */
+.hero-content{
+  max-width: 1200px;   /* <- esto hace que las cards puedan “abrirse” */
   width: 100%;
   padding: 1rem;
 }
-
 .hero-content h1 {
   font-size: 3rem;
   font-weight: 700;
@@ -52,7 +55,7 @@
   gap: 1rem;
 }
 
-/* 🔘 Botones principales */
+/* Botones principales */
 .hero-buttons .btn {
   border-radius: 50px;
   padding: 12px 30px;
@@ -67,7 +70,7 @@
   transform: translateY(-2px);
 }
 
-/* 📱 Responsivo */
+/* Responsivo */
 @media (max-width: 992px) {
   .hero-content h1 {
     font-size: 2.4rem;
@@ -116,8 +119,8 @@
     font-size: 0.9rem;
   }
 }
-/* 🔹 Estilo del título con logo * /
-/* 🔹 Título con logo */
+/*  Estilo del título con logo * /
+/*  Título con logo */
 .hero-title {
   display: flex;
   align-items: center;
@@ -128,7 +131,7 @@
   margin-bottom: 1rem;
 }
 
-/* 🔹 Logo React animado */
+/*  Logo React animado */
 .react-logo {
   width: 45px;
   height: 45px;
@@ -146,7 +149,7 @@
   }
 }
 
-/* 📱 Ajuste para móviles */
+/*  Ajuste para móviles */
 @media (max-width: 768px) {
   .react-logo {
     width: 35px;
@@ -159,43 +162,46 @@
   }
 }
 
-/* =============================
-   💼 CARDS DE ABOUT ME
-============================= */
-
-.about-cards-container {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  margin-top: 3rem;
-}
-
+/* CARDS DE ABOUT ME */
 .about-card {
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 12px;
-  padding: 2rem 1.5rem;
-  flex: 1 1 300px;
-  max-width: 340px;
+  height: 100%;
+  padding: 2rem 2.2rem;   /* más ancho que alto */
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
   color: #e5e5e5;
+
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.35s ease;
+}
+.about-cards-wrap{
+  margin-top: 2.5rem;
 }
 
-.about-card:hover {
-  transform: translateY(-6px);
-  background-color: rgba(255, 255, 255, 0.15);
+.about-card.card{
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 18px;
+  padding: 2rem 2.2rem;
+  color: #e5e5e5;
+  transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease, border-color .25s ease;
+}
+
+.about-card.card:hover{
+  transform: translateY(-8px);
+  background-color: rgba(255, 255, 255, 0.18);
   border-color: #61dafb;
-  box-shadow: 0 0 15px rgba(97, 218, 251, 0.4);
+  box-shadow: 0 0 20px rgba(97, 218, 251, 0.45);
 }
 
-.icon-wrapper {
+.icon-wrapper{
   font-size: 2.5rem;
   color: #61dafb;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.10);
   width: 70px;
   height: 70px;
   margin: 0 auto 1rem;
@@ -203,7 +209,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.4s ease;
 }
 
 .about-card:hover .icon-wrapper {
@@ -220,7 +225,7 @@
   line-height: 1.5;
 }
 
-/* 📱 Responsivo */
+/* Responsivo */
 @media (max-width: 992px) {
   .about-cards-container {
     flex-direction: column;

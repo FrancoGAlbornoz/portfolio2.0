@@ -13,16 +13,17 @@
 /* Espaciado entre secciones */
 section {
   padding: 80px 0;
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: block;      /* <- ya no flex global */
+  min-height: auto;    /* <- chau 80vh */
 }
-
 /* Títulos generales */
 section h2 {
   text-align: center;
   margin-bottom: 40px;
   font-weight: 600;
   font-size: 2rem;
+}
+
+.hero-section {
+  min-height: calc(100svh - 70px);
 }

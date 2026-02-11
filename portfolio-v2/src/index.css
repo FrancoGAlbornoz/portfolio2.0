@@ -13,10 +13,11 @@ html {
 
 body {
   font-family: "Poppins", "Segoe UI", Roboto, sans-serif;
-  background-color: #000; /* o el mismo azul oscuro del gradiente si querés */
+  background-color: #f8f9fa; /* en vez de #000 */
   color: #212529;
   overflow-x: hidden;
 }
+
 
 /* =========================
    📱 LAYOUT GENERAL
@@ -30,15 +31,6 @@ main section:not(:first-of-type) {
   scroll-margin-top: 70px; /* evita que el scroll tape secciones con el navbar */
 }
 
-/* Cada sección ocupa un bloque espacioso */
-section {
-  padding: 80px 0;
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
 /* =========================
    🧠 TEXTOS

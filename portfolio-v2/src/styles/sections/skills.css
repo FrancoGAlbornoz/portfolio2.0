@@ -1,0 +1,108 @@
+/* Skills Section Styles */
+
+.skills-section{
+  background: #f8f9fa;
+  color: #0f172a;
+  padding: 90px 16px;
+}
+
+.skills-container{
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.skills-header{
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.skills-header h2{
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.skills-header p{
+  color: #64748b;
+  margin: 0 auto;
+  max-width: 520px;
+}
+
+.skills-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 44px 64px;
+  align-items: start;
+}
+
+.skills-block h3{
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0b5ed7;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.skills-tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skill-pill{
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: #0b2a66;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 6px 14px rgba(2, 6, 23, 0.12);
+}
+
+/* Responsive */
+@media (max-width: 992px){
+  .skills-grid{
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+  .skills-block h3{
+    text-align: center;
+  }
+  .skills-tags{
+    justify-content: center;
+  }
+}
+/* Efectos Hover para skill-pill */
+.skill-pill{
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: #0b2a66;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 6px 14px rgba(2, 6, 23, 0.12);
+
+  /* 👇 transición suave */
+  transition: 
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* 👇 efecto hover */
+.skill-pill:hover{
+  transform: scale(1.08);
+  box-shadow: 0 10px 22px rgba(2, 6, 23, 0.25);
+}
+
+
+@media (max-width: 768px){
+  .skill-pill:hover{
+    transform: none;
+    box-shadow: 0 6px 14px rgba(2, 6, 23, 0.12);
+  }
+}
