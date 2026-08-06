@@ -1,0 +1,38 @@
+digraph PortfolioGraph {
+  rankdir=LR;
+  "src/main.jsx" -> "src/index.css";
+  "src/main.jsx" -> "src/App.jsx";
+
+  "src/App.jsx" -> "src/components/Header.jsx";
+  "src/App.jsx" -> "src/pages/Landing.jsx";
+  "src/App.jsx" -> "src/components/Footer.jsx";
+
+  "src/components/Header.jsx" -> "src/styles/components/header.css";
+  "src/components/Header.jsx" -> "npm:react-bootstrap";
+  "src/components/Header.jsx" -> "npm:react-scroll";
+
+  "src/components/Footer.jsx" -> "src/styles/components/footer.css";
+  "src/components/Footer.jsx" -> "npm:react-bootstrap";
+  "src/components/Footer.jsx" -> "npm:react-icons";
+
+  "src/pages/Landing.jsx" -> "src/sections/AboutMe.jsx";
+  "src/pages/Landing.jsx" -> "src/sections/Skills.jsx";
+  "src/pages/Landing.jsx" -> "src/sections/Projects.jsx";
+  "src/pages/Landing.jsx" -> "src/sections/Contact.jsx";
+
+  "src/sections/AboutMe.jsx" -> "src/styles/sections/aboutme.css";
+  "src/sections/AboutMe.jsx" -> "src/assets/react.svg";
+  "src/sections/AboutMe.jsx" -> "npm:react-icons";
+
+  "src/sections/Skills.jsx" -> "src/styles/sections/skills.css";
+  "src/sections/Projects.jsx" -> "src/styles/sections/projects.css";
+  "src/sections/Projects.jsx" -> "npm:react-icons";
+  "src/sections/Contact.jsx" -> "src/styles/sections/contact.css";
+  "src/sections/Contact.jsx" -> "npm:react-icons";
+
+  // group styling files for visibility
+  subgraph cluster_styles {
+    label = "styles/assets";
+    "src/index.css"; "src/assets/react.svg"; "src/styles/components/header.css"; "src/styles/components/footer.css"; "src/styles/sections/aboutme.css"; "src/styles/sections/skills.css"; "src/styles/sections/projects.css"; "src/styles/sections/contact.css";
+  }
+}
