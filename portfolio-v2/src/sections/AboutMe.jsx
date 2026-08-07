@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/sections/aboutme.css";
-import { FaCode, FaServer, FaShieldAlt, FaGithub, FaLinkedin, FaEnvelope, FaTerminal, FaDatabase, FaReact, FaLock } from "react-icons/fa";
+import { FaCode, FaServer, FaShieldAlt, FaGithub, FaLinkedin, FaEnvelope, FaFileDownload, FaTerminal, FaDatabase, FaReact, FaLock } from "react-icons/fa";
 import { Link } from "react-scroll";
 import ReactLogo from "../assets/react.svg";
 
@@ -102,9 +102,22 @@ function AboutMe() {
               <Link to="projects" smooth={true} duration={500} offset={-80} className="btn-primary-hero pulsing-btn">
                 Ver Proyectos
               </Link>
+              
+              <a 
+                href="/CV_Franco_Albornoz.pdf" 
+                download="CV_Franco_Albornoz.pdf"
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn-secondary-hero"
+                title="Descargar CV en PDF"
+              >
+                <FaFileDownload /> Descargar CV
+              </a>
+
               <Link to="contact" smooth={true} duration={500} offset={-80} className="btn-secondary-hero">
                 <FaEnvelope /> Contactar
               </Link>
+
               <a 
                 href="https://linkedin.com/in/francogenaroalbornoz" 
                 target="_blank" 
@@ -114,6 +127,7 @@ function AboutMe() {
               >
                 <FaLinkedin />
               </a>
+
               <a 
                 href="https://github.com/FrancoGAlbornoz" 
                 target="_blank" 

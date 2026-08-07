@@ -58,12 +58,14 @@ function Header() {
             </button>
 
             <a 
-              href="https://github.com/FrancoGAlbornoz" 
+              href="/CV_Franco_Albornoz.pdf" 
+              download="CV_Franco_Albornoz.pdf"
               target="_blank" 
               rel="noopener noreferrer" 
               className="btn-cv-download ms-lg-2 mt-3 mt-lg-0"
+              title="Descargar CV en PDF"
             >
-              <FaFileDownload /> CV / Perfil
+              <FaFileDownload /> Descargar CV
             </a>
           </Nav>
         </Navbar.Collapse>
