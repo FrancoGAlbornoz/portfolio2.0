@@ -1,16 +1,19 @@
-// src/pages/Landing.jsx
 import React from "react";
 import AboutMe from "../sections/AboutMe";
-import Skills from "../sections/Skills";
+import Experience from "../sections/Experience";
 import Projects from "../sections/Projects";
+import Skills from "../sections/Skills";
+import Certifications from "../sections/Certifications";
 import Contact from "../sections/Contact";
 
 function Landing() {
   return (
     <main>
       <AboutMe />
-      <Skills />
+      <Experience />
       <Projects />
+      <Skills />
+      <Certifications />
       <Contact />
     </main>
   );

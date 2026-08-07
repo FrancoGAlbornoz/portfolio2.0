@@ -1,23 +1,64 @@
-import { Container } from "react-bootstrap";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import React from "react";
+import { FaGithub, FaLinkedin, FaEnvelope, FaArrowUp } from "react-icons/fa";
+import { Link } from "react-scroll";
 import "../styles/components/footer.css";
 
-function Footer() {
-  return (
-    <footer className="footer">
-      <Container className="footer-container">
-        <p className="mb-0">
-          © {new Date().getFullYear()} <strong>Franco Albornoz</strong>. Todos los derechos reservados.
-        </p>
+export default function Footer() {
+  const currentYear = new Date().getFullYear();
 
-        <div className="social-links">
-          <a href="https://github.com/FrancoAlbornoz" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
-          <a href="https://linkedin.com/in/francoalbornoz" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-          <a href="mailto:tuemail@example.com"><FaEnvelope /></a>
+  return (
+    <footer className="footer-custom">
+      <div className="container">
+        <div className="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+          
+          <div className="footer-left text-center text-md-start">
+            <span className="footer-brand">Franco G. Albornoz</span>
+            <p className="footer-copy mb-0">
+              © {currentYear} Franco Albornoz. Desarrollado con React & Vite.
+            </p>
+          </div>
+
+          <div className="footer-socials d-flex align-items-center gap-3">
+            <a 
+              href="https://github.com/FrancoGAlbornoz" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              title="GitHub"
+            >
+              <FaGithub />
+            </a>
+            <a 
+              href="https://linkedin.com/in/francogenaroalbornoz" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              title="LinkedIn"
+            >
+              <FaLinkedin />
+            </a>
+            <a 
+              href="mailto:francog.albornoz17@gmail.com"
+              aria-label="Email"
+              title="Email"
+            >
+              <FaEnvelope />
+            </a>
+          </div>
+
+          <Link
+            to="about"
+            smooth={true}
+            duration={500}
+            className="btn-back-to-top"
+            aria-label="Volver arriba"
+            title="Volver arriba"
+          >
+            <FaArrowUp />
+          </Link>
+
         </div>
-      </Container>
+      </div>
     </footer>
   );
 }
-
-export default Footer;

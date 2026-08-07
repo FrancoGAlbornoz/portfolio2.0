@@ -1,149 +1,167 @@
-.projects-section{
-  background: #f8f9fa;
-  color: #0f172a;
-  padding: 90px 16px;
+.projects-section {
+  padding: 5rem 0;
+  background-color: var(--bg-primary);
 }
 
-.projects-container{
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
+.filter-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
-.projects-header{
-  text-align: center;
-  margin-bottom: 48px;
+.filter-btn:hover {
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
 }
 
-.projects-header h2{
-  font-size: 2.4rem;
-  font-weight: 800;
-  margin-bottom: 10px;
+.filter-btn.active {
+  background: var(--accent-gradient);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 4px 15px var(--accent-glow);
 }
 
-.projects-header p{
-  color: #64748b;
-  margin: 0 auto;
-  max-width: 520px;
-}
-
-.projects-grid{
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 26px;
-}
-
-.project-card{
-  background: #fff;
-  border: 1px solid rgba(2,6,23,0.10);
-  border-radius: 14px;
-  padding: 22px 22px;
-  box-shadow: 0 10px 22px rgba(2,6,23,0.06);
+.project-card-modern {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
 
-.project-card:hover{
-  transform: translateY(-4px);
-  box-shadow: 0 14px 28px rgba(2,6,23,0.10);
-  border-color: rgba(11,94,215,0.45);
+.project-card-modern:hover {
+  transform: translateY(-8px);
+  border-color: var(--border-color-hover);
+  box-shadow: 0 15px 30px var(--shadow-md);
 }
 
-.project-card.is-featured{
-  border: 2px solid #0b5ed7;
+/* Dynamic Gradient Glow for Featured Cards */
+.project-card-modern.is-featured {
+  border: 1px solid transparent;
+  background-image: linear-gradient(var(--bg-card), var(--bg-card)), var(--accent-gradient);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 4px 20px rgba(56, 189, 248, 0.12);
 }
 
-.project-top{
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
+.project-card-modern.is-featured:hover {
+  box-shadow: 0 12px 35px rgba(56, 189, 248, 0.3);
 }
 
-.project-top h3{
-  margin: 0;
-  font-size: 1.35rem;
-  font-weight: 900;
+/* Image Container / Screenshot Styling */
+.project-image-container {
+  width: 100%;
+  height: 195px;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
 }
 
-.project-badge{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6px 10px;
-  border-radius: 10px;
-  background: #0b5ed7;
-  color: #fff;
-  font-weight: 800;
+.project-img-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.5s ease;
+}
+
+.project-card-modern:hover .project-img-preview {
+  transform: scale(1.07);
+}
+
+.category-badge {
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
   font-size: 0.75rem;
-  white-space: nowrap;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
 }
 
-.project-desc{
-  margin: 0;
-  color: #475569;
+.featured-badge {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  animation: starPulse 2s infinite alternate;
+}
+
+@keyframes starPulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+.project-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.35;
+}
+
+.project-desc {
+  font-size: 0.925rem;
+  color: var(--text-secondary);
   line-height: 1.6;
 }
 
-.project-tags{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+.project-pill {
+  background: var(--badge-bg);
+  color: var(--badge-text);
+  font-size: 0.775rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
 }
 
-.project-pill{
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: #0b2a66;
-  color: #fff;
-  font-weight: 800;
-  font-size: 0.85rem;
+.project-card-modern:hover .project-pill {
+  transform: translateY(-2px);
 }
 
-.project-link{
-  margin-top: 6px;
+.btn-github-link {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.9rem;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 12px 14px;
+  transition: color 0.25s ease;
+}
+
+.btn-github-link:hover {
+  color: var(--accent-cyan);
+}
+
+.btn-more-projects {
+  display: inline-block;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-weight: 600;
+  padding: 0.75rem 2rem;
   border-radius: 12px;
-  border: 1px solid rgba(2,6,23,0.14);
-  color: #0f172a;
-  text-decoration: none;
-  font-weight: 800;
-  background: #fff;
-  transition: background 0.18s ease, transform 0.18s ease;
+  transition: all 0.25s ease;
 }
 
-.project-link:hover{
-  background: rgba(11,94,215,0.06);
-  transform: translateY(-1px);
-}
-
-.projects-footer{
-  display: flex;
-  justify-content: center;
-  margin-top: 26px;
-}
-
-.projects-more{
-  text-decoration: none;
-  font-weight: 900;
-  color: #0b5ed7;
-}
-
-.projects-more:hover{
-  text-decoration: underline;
-}
-
-/* Responsive */
-@media (max-width: 992px){
-  .projects-grid{
-    grid-template-columns: 1fr;
-  }
+.btn-more-projects:hover {
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px var(--accent-glow);
 }
